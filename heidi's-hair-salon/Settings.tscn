@@ -1,6 +1,14 @@
-[gd_scene format=3 uid="uid://d1hn1cr0xf5go"]
+[gd_scene load_steps=3 format=3 uid="uid://d1hn1cr0xf5go"]
+
+[ext_resource type="Texture2D" uid="uid://b72b5imphowcw" path="res://img/bg-4.png" id="1_2fv1l"]
+[ext_resource type="FontFile" uid="uid://bd6ci72slw53h" path="res://fonts/ark-pixel-10px-monospaced-latin.ttf.woff" id="2_mx4kw"]
 
 [node name="Settings" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2fv1l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -13,6 +21,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mx4kw")
+theme_override_font_sizes/font_size = 20
 text = "This is the settings scene!"

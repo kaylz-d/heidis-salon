@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://duwoov7o3ldaa"]
+[gd_scene load_steps=7 format=3 uid="uid://duwoov7o3ldaa"]
 
+[ext_resource type="Script" uid="uid://d22fskbt6fjid" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://dne2je56kj2qe" path="res://img/concept_2_pixel.png" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://bvgtyrv6x6ssu" path="res://img/bg-3.png" id="1_r0du0"]
 [ext_resource type="FontFile" uid="uid://bd6ci72slw53h" path="res://fonts/ark-pixel-10px-monospaced-latin.ttf.woff" id="2_uu6xs"]
+[ext_resource type="Shader" uid="uid://bune5d2fh4ao" path="res://Main_title.gdshader" id="4_fos0i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fos0i"]
+shader = ExtResource("4_fos0i")
+shader_parameter/height = 7.0
+shader_parameter/speed = 1.0
 
 [node name="Main" type="Node"]
+script = ExtResource("1_cm0pq")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("1_r0du0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 226.0
@@ -35,8 +49,11 @@ theme_override_constants/separation = 40
 
 [node name="Title" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.925871, 0.486532, 0.616295, 1)
-theme_override_colors/font_outline_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_colors/font_shadow_color = Color(0.692427, 0.203973, 0.401049, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("2_uu6xs")
 theme_override_font_sizes/font_size = 40
@@ -74,15 +91,17 @@ theme_override_font_sizes/font_size = 20
 text = "Credits"
 
 [node name="project_settings" type="Label" parent="."]
+material = SubResource("ShaderMaterial_fos0i")
 offset_left = 40.0
 offset_top = 240.0
 offset_right = 440.0
 offset_bottom = 250.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.694118, 0.203922, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0.694118, 0.203922, 0.4, 1)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_uu6xs")
 theme_override_font_sizes/font_size = 10
-text = "Project settings: 400 x 225"
+text = "Toggle with arrow keys, press SPACE to select"
 horizontal_alignment = 1
 vertical_alignment = 1
 

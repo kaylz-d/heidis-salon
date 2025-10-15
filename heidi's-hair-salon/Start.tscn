@@ -1,6 +1,14 @@
-[gd_scene format=3 uid="uid://coyiuln4pbcie"]
+[gd_scene load_steps=3 format=3 uid="uid://coyiuln4pbcie"]
+
+[ext_resource type="Texture2D" uid="uid://cycjscnl16klu" path="res://img/ui-bar-b.png" id="1_r305v"]
+[ext_resource type="FontFile" uid="uid://bd6ci72slw53h" path="res://fonts/ark-pixel-10px-monospaced-latin.ttf.woff" id="2_52bhu"]
 
 [node name="Start" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_r305v")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -15,4 +23,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_52bhu")
+theme_override_font_sizes/font_size = 20
 text = "This is the opening scene :0"
