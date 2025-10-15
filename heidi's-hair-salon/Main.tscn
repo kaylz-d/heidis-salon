@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://duwoov7o3ldaa"]
+[gd_scene load_steps=3 format=3 uid="uid://duwoov7o3ldaa"]
 
-[ext_resource type="Texture2D" uid="uid://bc4ceeljche6s" path="res://img/concept_loading.png" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://dne2je56kj2qe" path="res://img/concept_2_pixel.png" id="1_glv2v"]
+[ext_resource type="FontFile" uid="uid://bd6ci72slw53h" path="res://fonts/ark-pixel-10px-monospaced-latin.ttf.woff" id="2_uu6xs"]
 
 [node name="Main" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 226.0
+offset_top = 16.0
+offset_right = 482.0
+offset_bottom = 272.0
+texture = ExtResource("1_glv2v")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -10,11 +18,81 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_glv2v")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 220
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.925871, 0.486532, 0.616295, 1)
+theme_override_colors/font_outline_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_uu6xs")
+theme_override_font_sizes/font_size = 40
+text = "HEIDI'S
+HAIR SALON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Start" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_fonts/font = ExtResource("2_uu6xs")
+theme_override_font_sizes/font_size = 20
+text = "Start"
+
+[node name="Settings" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_fonts/font = ExtResource("2_uu6xs")
+theme_override_font_sizes/font_size = 20
+text = "Settings"
+
+[node name="Credits" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_fonts/font = ExtResource("2_uu6xs")
+theme_override_font_sizes/font_size = 20
+text = "Credits"
+
+[node name="project_settings" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 240.0
+offset_right = 440.0
+offset_bottom = 250.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uu6xs")
+theme_override_font_sizes/font_size = 10
+text = "Project settings: 400 x 225"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrow" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 153.0
+offset_right = 90.0
+offset_bottom = 173.0
+theme_override_colors/font_shadow_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.92549, 0.486275, 0.615686, 1)
+theme_override_fonts/font = ExtResource("2_uu6xs")
+theme_override_font_sizes/font_size = 20
+text = ">"
